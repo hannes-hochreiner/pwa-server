@@ -8,3 +8,6 @@ authors = ["Hannes Hochreiner <hannes@hochreiner.net>"]
 
 [dependencies]
 rocket = "0.5.0-rc.1"
+
+[package.metadata.release]
+publish = false
