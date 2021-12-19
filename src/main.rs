@@ -5,14 +5,15 @@ use rocket::fs::FileServer;
 #[macro_use]
 extern crate rocket;
 
-#[get("/")]
-fn index() -> &'static str {
-    "Hello, world!"
-}
-
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/config", routes![index])
-        .mount("/", FileServer::from(env::var("ROOT_FS_PATH").unwrap()))
+        .mount(
+            "/",
+            FileServer::from(env::var("ROOT_DIR").unwrap()).rank(10),
+        )
+        .mount(
+            "/config",
+            FileServer::from(env::var("CONFIG_DIR").unwrap()).rank(0),
+        )
 }
