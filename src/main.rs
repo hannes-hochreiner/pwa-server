@@ -1,4 +1,9 @@
-#[macro_use] extern crate rocket;
+use std::env;
+
+use rocket::fs::FileServer;
+
+#[macro_use]
+extern crate rocket;
 
 #[get("/")]
 fn index() -> &'static str {
@@ -7,5 +12,7 @@ fn index() -> &'static str {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+    rocket::build()
+        .mount("/config", routes![index])
+        .mount("/", FileServer::from(env::var("ROOT_FS_PATH").unwrap()))
 }
