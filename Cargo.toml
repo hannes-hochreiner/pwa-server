@@ -7,7 +7,14 @@ authors = ["Hannes Hochreiner <hannes@hochreiner.net>"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rocket = "0.5.0-rc.1"
+hyper = { version = "0.14", features = ["full"] }
+tokio = { version = "1", features = ["full"] }
+tokio-util = { version = "0.6", features = ["codec"] }
+log = "0.4"
+env_logger = "0.9"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
 
 [package.metadata.release]
 publish = false
