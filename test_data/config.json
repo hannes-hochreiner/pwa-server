@@ -1,0 +1,14 @@
+{
+  "ip": "127.0.0.1",
+  "port": 8000,
+  "directories": [
+    {
+      "prefix": "/config/",
+      "path": "./test_data/config_dir"
+    },
+    {
+      "prefix": "/",
+      "path": "./test_data/root_dir"
+    }
+  ]
+}
