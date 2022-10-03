@@ -1,3 +1,5 @@
+[![CI](https://github.com/hannes-hochreiner/pwa-server/actions/workflows/main.yml/badge.svg)](https://github.com/hannes-hochreiner/pwa-server/actions/workflows/main.yml)
+
 # PWA-Server
 
 A server for progressive web apps.
